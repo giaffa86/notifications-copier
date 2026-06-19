@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.notifications-copier" path="/org/gnome/shell/extensions/notifications-copier/">
+    <key name="auto-copy" type="b">
+      <default>true</default>
+      <description>Automatically copy detected tokens and PINs to the clipboard</description>
+    </key>
+
+    <key name="show-confirmation" type="b">
+      <default>false</default>
+      <description>Show a notification when a token is copied to the clipboard</description>
+    </key>
+
+    <key name="pin-min-digits" type="i">
+      <default>4</default>
+      <description>Minimum number of digits for a PIN or numeric code</description>
+    </key>
+
+    <key name="pin-max-digits" type="i">
+      <default>8</default>
+      <description>Maximum number of digits for a PIN or numeric code</description>
+    </key>
+
+    <key name="token-keywords" type="as">
+      <default>["code","codice","token","otp","pin","verif","verifica","auth","2fa","two-factor","two factor","one-time","one time","temporary","temporaneo","temporanea","access code","security code","codice di sicurezza","codice di verifica","password","one-time password","one time password","totp"]</default>
+      <description>Keywords that indicate a token or PIN is present in a notification. Each word or phrase is matched case-insensitively against notification text.</description>
+    </key>
+
+    <key name="token-min-length" type="i">
+      <default>6</default>
+      <description>Minimum character length for alphanumeric token fallback</description>
+    </key>
+
+    <key name="token-max-length" type="i">
+      <default>64</default>
+      <description>Maximum character length for alphanumeric token fallback</description>
+    </key>
+
+    <key name="last-copied-token" type="s">
+      <default>""</default>
+      <description>Last copied token (used to prevent duplicate copies)</description>
+    </key>
+  </schema>
+</schemalist>

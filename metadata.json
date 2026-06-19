@@ -1,0 +1,10 @@
+{
+  "name": "Notifications Copier",
+  "description": "Automatically copies authentication tokens, PINs, and one-time codes from GNOME notifications to the clipboard. Reads notification content to detect verification codes and OTPs without storing or transmitting data.",
+  "uuid": "notifications-copier@giaffa86",
+  "url": "https://github.com/giaffa86/notifications-copier",
+  "shell-version": [
+    "50"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.notifications-copier"
+}
