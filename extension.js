@@ -50,24 +50,17 @@ export default class NotificationsCopierExtension extends Extension {
     }
 
     _getMessageTraySources() {
-        if (typeof Main.messageTray.getSources === "function")
-            return Main.messageTray.getSources();
-
-        // GNOME Shell 50 exposes existing sources only through this private field.
-        return Main.messageTray._sources || [];
+        return Main.messageTray.getSources();
     }
 
     _watchSource(source) {
         if (!source || this._sourceSignalIds.has(source))
             return;
 
-        try {
-            const signalId = source.connect("notification-added", (_source, notification) => {
-                this._processNotification(notification);
-            });
-            this._sourceSignalIds.set(source, signalId);
-        } catch (_e) {
-        }
+        const signalId = source.connect("notification-added", (_source, notification) => {
+            this._processNotification(notification);
+        });
+        this._sourceSignalIds.set(source, signalId);
     }
 
     _processNotification(notification) {
@@ -129,10 +122,7 @@ export default class NotificationsCopierExtension extends Extension {
 
         if (this._sourceSignalIds) {
             for (const [source, signalId] of this._sourceSignalIds) {
-                try {
-                    source.disconnect(signalId);
-                } catch (_e) {
-                }
+                source.disconnect(signalId);
             }
             this._sourceSignalIds.clear();
             this._sourceSignalIds = null;
