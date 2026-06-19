@@ -90,6 +90,13 @@ python3 -m venv /tmp/shexli-venv
 /tmp/shexli-venv/bin/shexli /tmp/notifications-copier-pack/notifications-copier@giaffa86.shell-extension.zip
 ```
 
+`/tmp` is volatile; regenerate the zip if it disappears between sessions.
+
+Expected current Shexli result:
+- `0 errors`
+- `0 warnings`
+- one `manual_review` finding for `St.Clipboard.get_default()` is acceptable because clipboard access is the extension's primary purpose and is declared in `metadata.json`.
+
 ## Key files
 
 | File | Role |
