@@ -1,6 +1,8 @@
 # Notifications Copier
 
-![Notifications Copier logo](logo.png)
+<p align="center">
+  <img src="logo.png" alt="Notifications Copier logo" width="160">
+</p>
 
 GNOME Shell extension that copies verification codes, OTPs, PINs, and short authentication tokens from notifications to the clipboard.
 
