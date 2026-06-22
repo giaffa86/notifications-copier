@@ -38,11 +38,12 @@ function extractToken(text, keywords, minDigits, maxDigits, tokenMinLen, tokenMa
 export default class NotificationsCopierExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
-        this._sourceSignalIds = new Map();
+        this._watchedSources = new Set();
 
-        this._messageTraySignalId = Main.messageTray.connect(
+        Main.messageTray.connectObject(
             "source-added",
-            (_tray, source) => this._watchSource(source)
+            (_tray, source) => this._watchSource(source),
+            this
         );
 
         for (const source of this._getMessageTraySources())
@@ -54,13 +55,15 @@ export default class NotificationsCopierExtension extends Extension {
     }
 
     _watchSource(source) {
-        if (!source || this._sourceSignalIds.has(source))
+        if (!source || this._watchedSources.has(source))
             return;
 
-        const signalId = source.connect("notification-added", (_source, notification) => {
-            this._processNotification(notification);
-        });
-        this._sourceSignalIds.set(source, signalId);
+        source.connectObject(
+            "notification-added",
+            (_source, notification) => this._processNotification(notification),
+            this
+        );
+        this._watchedSources.add(source);
     }
 
     _processNotification(notification) {
@@ -115,17 +118,14 @@ export default class NotificationsCopierExtension extends Extension {
     }
 
     disable() {
-        if (this._messageTraySignalId) {
-            Main.messageTray.disconnect(this._messageTraySignalId);
-            this._messageTraySignalId = null;
-        }
 
-        if (this._sourceSignalIds) {
-            for (const [source, signalId] of this._sourceSignalIds) {
-                source.disconnect(signalId);
-            }
-            this._sourceSignalIds.clear();
-            this._sourceSignalIds = null;
+        Main.messageTray.disconnectObject(this);
+
+        if (this._watchedSources) {
+            for (const source of this._watchedSources)
+                source.disconnectObject(this);
+            this._watchedSources.clear();
+            this._watchedSources = null;
         }
 
         this._settings = null;
