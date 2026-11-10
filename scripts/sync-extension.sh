@@ -18,6 +18,7 @@ rsync -av --delete --delete-excluded \
   --exclude='.agents' \
   --exclude='.codex' \
   --exclude='.claude' \
+  --exclude='.serena' \
   "${SOURCE_DIR}/" \
   "${TARGET_DIR}/"
 

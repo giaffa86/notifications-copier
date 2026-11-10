@@ -26,11 +26,11 @@ function extractToken(text, keywords, minDigits, maxDigits, tokenMinLen, tokenMa
     if (numericMatches.length > 0)
         return numericMatches[0][1];
 
-    const alphanumPattern = new RegExp(`\\b([A-Za-z0-9]{${tokenMinLen},${tokenMaxLen}})\\b`);
-    const tokenMatch = text.match(alphanumPattern);
-
-    if (tokenMatch && /\d/.test(tokenMatch[1]))
-        return tokenMatch[1];
+    const alphanumPattern = new RegExp(`\\b([A-Za-z0-9]{${tokenMinLen},${tokenMaxLen}})\\b`, "g");
+    for (const tokenMatch of text.matchAll(alphanumPattern)) {
+        if (/\d/.test(tokenMatch[1]))
+            return tokenMatch[1];
+    }
 
     return null;
 }

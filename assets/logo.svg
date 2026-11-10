@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Notifications Copier</title>
+  <desc id="description">A blue notification bell and clipboard with three green code dots on a dark rounded tile.</desc>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2b2f3d"/>
+      <stop offset="0.55" stop-color="#252938"/>
+      <stop offset="1" stop-color="#292d3b"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#67b1ff"/>
+      <stop offset="1" stop-color="#559ef5"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#64e594"/>
+      <stop offset="1" stop-color="#4fd58a"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="30" y="31" width="449" height="450" rx="89" fill="url(#tile)"/>
+
+  <!-- Notification bell, including the crown and clapper. -->
+  <path d="M210 119 V108 A27 27 0 0 1 264 108 V119 Z" fill="url(#blue)"/>
+  <path d="M154 319 C154 377 219 377 219 319" fill="none" stroke="url(#blue)" stroke-width="21"/>
+  <path d="M326 220 C322 161 286 119 239 119 C189 119 151 157 142 209 C137 248 125 276 102 302 Q92 314 106 319 H246"
+        fill="none" stroke="url(#blue)" stroke-width="22" stroke-linejoin="round"/>
+
+  <!-- An opaque clipboard face covers the lower-right part of the bell. -->
+  <rect x="241" y="266" width="171" height="141" rx="23" fill="#272b3a" stroke="url(#blue)" stroke-width="20"/>
+  <path d="M289 247 H298 C298 232 311 220 327 220 C343 220 356 232 356 247 H365 Q378 247 378 260 V274 Q378 287 365 287 H289 Q276 287 276 274 V260 Q276 247 289 247 Z"
+        fill="#ffffff"/>
+  <circle cx="327" cy="250" r="12" fill="#272b3a"/>
+
+  <g fill="url(#green)">
+    <circle cx="282" cy="340" r="19"/>
+    <circle cx="327" cy="340" r="19"/>
+    <circle cx="372" cy="340" r="19"/>
+  </g>
+</svg>

@@ -3,6 +3,7 @@ private/
 .agents/
 .codex/
 .claude/
+.serena/
 
 # Generated extension bundles
 *.shell-extension.zip
