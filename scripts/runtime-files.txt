@@ -1,0 +1,9 @@
+metadata.json
+extension.js
+prefs.js
+schemas/org.gnome.shell.extensions.notifications-copier.gschema.xml
+LICENSE
+locale/it/LC_MESSAGES/notifications-copier.mo
+locale/es/LC_MESSAGES/notifications-copier.mo
+locale/de/LC_MESSAGES/notifications-copier.mo
+locale/fr/LC_MESSAGES/notifications-copier.mo

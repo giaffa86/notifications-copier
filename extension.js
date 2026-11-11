@@ -4,7 +4,7 @@ import St from "gi://St";
 
 import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
-import {Extension} from "resource:///org/gnome/shell/extensions/extension.js";
+import {Extension, gettext as _} from "resource:///org/gnome/shell/extensions/extension.js";
 
 function hasTokenKeyword(text, keywords) {
     if (!text)
@@ -114,7 +114,7 @@ export default class NotificationsCopierExtension extends Extension {
         clipboard.set_text(St.ClipboardType.CLIPBOARD, token);
 
         if (this._settings.get_boolean("show-confirmation"))
-            Main.notify("Token Copied", token);
+            Main.notify(_("Token Copied"), token);
     }
 
     disable() {

@@ -1,0 +1,142 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+msgid ""
+msgstr ""
+"Project-Id-Version: Notifications Copier\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-11 00:00+0100\n"
+"PO-Revision-Date: 2026-11-11 00:00+0100\n"
+"Last-Translator: giaffa86 contributors\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: German\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extension.js:117
+msgid "Token Copied"
+msgstr "Token kopiert"
+
+#: prefs.js:32 prefs.js:56 prefs.js:104
+msgid "Reset to default"
+msgstr "Auf Standard zurücksetzen"
+
+#: prefs.js:120
+msgid "Last copied token"
+msgstr "Zuletzt kopiertes Token"
+
+#: prefs.js:121
+msgid "Clear the remembered token so the same code can be copied again"
+msgstr ""
+"Gespeichertes Token löschen, damit derselbe Code erneut kopiert werden kann"
+
+#: prefs.js:125
+msgid "Clear"
+msgstr "Löschen"
+
+#: prefs.js:146
+msgid "General"
+msgstr "Allgemein"
+
+#: prefs.js:152
+msgid "Behaviour"
+msgstr "Verhalten"
+
+#: prefs.js:153
+msgid "Configure automatic token detection and copying"
+msgstr "Automatische Erkennung und Kopie von Tokens konfigurieren"
+
+#: prefs.js:160
+msgid "Auto-copy tokens"
+msgstr "Tokens automatisch kopieren"
+
+#: prefs.js:161
+msgid "Automatically copy detected tokens and PINs to the clipboard"
+msgstr "Erkannte Tokens und PINs automatisch in die Zwischenablage kopieren"
+
+#: prefs.js:167
+msgid "Show confirmation"
+msgstr "Bestätigung anzeigen"
+
+#: prefs.js:168
+msgid "Show a notification when a token is copied to the clipboard"
+msgstr ""
+"Benachrichtigung anzeigen, wenn ein Token in die Zwischenablage kopiert wird"
+
+#: prefs.js:172
+msgid "Patterns"
+msgstr "Erkennungsmuster"
+
+#: prefs.js:173
+msgid ""
+"Keywords are comma-separated and matched case-insensitively against "
+"notification text."
+msgstr ""
+"Schlüsselwörter werden durch Kommas getrennt und ohne Beachtung der Groß- "
+"und Kleinschreibung im Benachrichtigungstext gesucht."
+
+#: prefs.js:180
+msgid "Token keywords"
+msgstr "Schlüsselwörter für Tokens"
+
+#: prefs.js:184
+msgid "PIN Range"
+msgstr "PIN-Länge"
+
+#: prefs.js:185
+msgid "Numeric code digit range for keyword-based detection."
+msgstr ""
+"Zulässige Ziffernanzahl numerischer Codes bei der Erkennung anhand von "
+"Schlüsselwörtern."
+
+#: prefs.js:192
+msgid "Minimum PIN digits"
+msgstr "Minimale PIN-Länge"
+
+#: prefs.js:193
+msgid "Minimum number of digits to consider a numeric sequence as a PIN"
+msgstr "Minimale Ziffernanzahl, um eine Zahlenfolge als PIN zu erkennen"
+
+#: prefs.js:201
+msgid "Maximum PIN digits"
+msgstr "Maximale PIN-Länge"
+
+#: prefs.js:202
+msgid "Maximum number of digits to consider a numeric sequence as a PIN"
+msgstr "Maximale Ziffernanzahl, um eine Zahlenfolge als PIN zu erkennen"
+
+#: prefs.js:208
+msgid "Alphanumeric Fallback"
+msgstr "Alphanumerische Ersatzsuche"
+
+#: prefs.js:209
+msgid ""
+"When no numeric PIN is found near a keyword, an alphanumeric token is "
+"searched instead."
+msgstr ""
+"Wenn in der Nähe eines Schlüsselworts keine numerische PIN gefunden wird, "
+"wird stattdessen nach einem alphanumerischen Token gesucht."
+
+#: prefs.js:216
+msgid "Minimum token length"
+msgstr "Minimale Token-Länge"
+
+#: prefs.js:217
+msgid "Minimum character length for alphanumeric token fallback"
+msgstr "Minimale Zeichenanzahl für die alphanumerische Ersatzsuche"
+
+#: prefs.js:225
+msgid "Maximum token length"
+msgstr "Maximale Token-Länge"
+
+#: prefs.js:226
+msgid "Maximum character length for alphanumeric token fallback"
+msgstr "Maximale Zeichenanzahl für die alphanumerische Ersatzsuche"
+
+#: prefs.js:232
+msgid "State"
+msgstr "Zustand"
+
+#: prefs.js:233
+msgid "Troubleshooting helpers"
+msgstr "Hilfen zur Fehlerbehebung"

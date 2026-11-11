@@ -117,3 +117,17 @@ Expected current Shexli result:
 ## Standalone script
 
 `code_extractor_dbus_monitor.sh` is a standalone bash script (not part of the extension) that uses `dbus-monitor` + `wl-copy` for the same purpose. Not required for the extension to work.
+
+## Localization and packaging
+
+- English is the source language; maintain complete `it`, `es`, `de`, `fr`
+  catalogues in `po/` and `gettext-domain` in `metadata.json`.
+- Wrap owned UI strings with gettext. Translate format strings before inserting
+  dynamic values; keep runtime identifiers, CLI values and user data unchanged.
+- After UI text changes: `./scripts/i18n.sh update`, edit all four catalogues,
+  then `./scripts/i18n.sh compile` and `./scripts/i18n.sh check`.
+- Use `./scripts/package.sh` instead of the older manual ZIP commands above.
+  `scripts/runtime-files.txt` includes compiled locale catalogues and LICENSE;
+  it excludes source catalogues, tests, docs and compiled schemas.
+- Build and test in isolation. Do not run `sync-extension.sh` to test a package
+  or modify the active host session.

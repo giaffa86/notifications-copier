@@ -82,13 +82,29 @@ gdbus call --session \
 
 ## Packaging
 
-Create the GNOME Extensions upload zip:
+Build a validated local ZIP with `./scripts/package.sh`.
 
-```bash
-mkdir -p /tmp/notifications-copier-pack
-zip -r -FS /tmp/notifications-copier-pack/notifications-copier@giaffa86.shell-extension.zip \
-  metadata.json \
-  extension.js \
-  prefs.js \
-  schemas/org.gnome.shell.extensions.notifications-copier.gschema.xml
+## Languages and local packaging
+
+The interface supports English, Italian, Spanish, German and French, following
+the session language. English is the source language and fallback. Identifiers,
+user data, detection keywords and external command output are not translated.
+
+The JavaScript runs directly in GNOME Shell. Building the translation catalogues
+requires gettext (`xgettext`, `msgmerge`, `msgcmp`, `msgfmt`) and Python 3; local
+packaging also requires `zip` and `glib-compile-schemas`.
+
+```sh
+./scripts/i18n.sh update   # after changing translatable source strings
+./scripts/i18n.sh compile  # compile it/es/de/fr catalogues
+./scripts/i18n.sh check    # source coverage, completeness, format and compiled data
+./scripts/package.sh      # validate and build dist/<uuid>.shell-extension.zip
 ```
+
+`po/` holds the editable catalogues and template. The package and sync scripts
+compile them and copy only the files in `scripts/runtime-files.txt`, including
+`locale/<language>/LC_MESSAGES/<gettext-domain>.mo`. Source catalogues, tests,
+development scripts, documentation and `gschemas.compiled` stay out of the ZIP.
+Packaging does not install or reload the host extension. The sync script does.
+
+Language verification: [docs/LOCALIZATION.md](docs/LOCALIZATION.md).
